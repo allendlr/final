@@ -341,10 +341,6 @@ char SubMenu()
 	return ch;
 }
 
-bool isRented(){
-	
-}
-
 void GetNumberOfElementsForCustomer(int &num)
 {
 	// this is the algorithm for getting the number of elements in the text file

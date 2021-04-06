@@ -42,7 +42,8 @@ int main()
 						video_list_object.subCopy(video_id);
 						customer_rent_child_list_object.setAddOrSub();
 					}
-				} else {
+				} 
+				else {
 					cout << "\nVideo Doesn't Exist or No Copies Available";
 				}
 				
@@ -125,8 +126,14 @@ int main()
 					int *id = customer_rent_child_list_object.DisplayRentList(customer_id);
 					int index = customer_rent_child_list_object.GetIndex(customer_id);
 					customer_parent_list_object.retrieveCustomerInfo(customer_id);
-					if(index > 0)
+					if(index > 0){
 						video_list_object.retrieveVideos(id, index);
+					} 
+					else
+					{
+						cout << "No Movies Rented";
+					}
+						
 				}
 				else
 					cout << "\nCustomer Doesn't Exist";
