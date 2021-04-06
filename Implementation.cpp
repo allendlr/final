@@ -268,7 +268,6 @@ void VideoList::DisplayVideos()
 }
 bool VideoList::isExist(int input_id){
 	VideoNode *node_pointer;
-	bool available = true;
 	bool checker = false;
 	if (head == NULL)
 	{
@@ -279,19 +278,15 @@ bool VideoList::isExist(int input_id){
 		node_pointer = head;
 		while (node_pointer != NULL)
 		{
-			if (node_pointer->data.number_of_copies <= 0)
-				available = false;
-			if (node_pointer->data.video_id == input_id)
+			if (node_pointer->data.video_id == input_id && node_pointer->data.number_of_copies > 0)
 			{
-				checker == true;
+				checker = true;
+				break;
 			}
 			node_pointer = node_pointer->next;
 		}
 	}
-	if (checker && available)
-		return true;
-	else
-		return false;
+	return checker;
 }
 void VideoList::CheckAvailability(int input_id)
 {
